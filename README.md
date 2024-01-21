@@ -1,3 +1,3 @@
-# extensions_of_threshold_analysis
+# Extensions of Threshold Analysis
 
-This is a test
+This repository is part of my thesis exploring extensions of threshold analysis in network meta-analysis.
