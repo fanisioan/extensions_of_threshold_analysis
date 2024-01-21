@@ -326,9 +326,9 @@ thresh_forest(thresh,
               xlim = c(-3, 2), refline = 0, digits = 2)
 ```
 
-## Methods
+## 3 Methods
 
-### Extensions of Threshold Analysis Function
+### 3.1 Extensions of Threshold Analysis Function
 
 Step 1 Set an upper bound for invariant interval, if the upper boundary is infinity then we make it 3 times the logOR:
 
@@ -458,13 +458,13 @@ metrics_plot <- function(title,metric,i){
   if(i>1){
     x = 0
     for(k in 1:(i-1)){
-      x = x + floor((II.hi[k] - II.lo[k])/0.01)
+      x = x + floor((II.hi[k] - II.lo[k])/0.1)
     }
-    j = 1:floor((II.hi[i] - II.lo[i])/0.01)
-    metric1 = metric[(x+1):(x + floor((II.hi[i] - II.lo[i])/0.01))]
+    j = 1:floor((II.hi[i] - II.lo[i])/0.1)
+    metric1 = metric[(x+1):(x + floor((II.hi[i] - II.lo[i])/0.1))]
     
-    return(plot(x =(II.lo[i] + 0.01*j),
-                y = unlist(metric)[(x+1):(x + floor((II.hi[i] - II.lo[i])/0.01))],
+    return(plot(x =(II.lo[i] + 0.1*j),
+                y = unlist(metric)[(x+1):(x + floor((II.hi[i] - II.lo[i])/0.1))],
                 col= color.gradient(unlist(metric1)),
                 pch= 19,
                 xlim = range(II.lo[i],II.hi[i]),
@@ -475,10 +475,10 @@ metrics_plot <- function(title,metric,i){
     )
   }
   else{
-    j = 1:floor((II.hi[i] - II.lo[i])/0.01)
-    metric1 = metric[1:floor((II.hi[i] - II.lo[i])/0.01)]
-    return(plot(x =(II.lo[i] + 0.01*j),
-                y = unlist(metric)[1:floor((II.hi[i] - II.lo[i])/0.01)],
+    j = 1:floor((II.hi[i] - II.lo[i])/0.1)
+    metric1 = metric[1:floor((II.hi[i] - II.lo[i])/0.1)]
+    return(plot(x =(II.lo[i] + 0.1*j),
+                y = unlist(metric)[1:floor((II.hi[i] - II.lo[i])/0.1)],
                 col= color.gradient(unlist(metric1)),
                 pch= 19,
                 xlim = range(II.lo[i],II.hi[i]),
